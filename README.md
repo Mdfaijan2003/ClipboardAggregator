@@ -14,6 +14,7 @@ A lightweight Windows background utility that collects your copied text and past
 - ✅ Paste all collected items in one action
 - ✅ Max history size limit (default: 12)
 - ✅ Auto-expiry (default: 1 hour)
+- ✅ Sensitive content filtering (API keys, tokens, passwords, card numbers)
 - ✅ Tray controls (Pause, Clear, Auto-start, Exit)
 - ✅ Local-only operation (no cloud sync, no telemetry)
 
@@ -22,30 +23,31 @@ A lightweight Windows background utility that collects your copied text and past
 ## Download
 
 Get the latest release from **GitHub Releases**:  
-`https://github.com/<your-username>/<your-repo>/releases`
+👉 https://github.com/Mdfaijan2003/ClipboardAggregator/releases
 
 ### Available packages
-- **Installer** (recommended for non-technical users)
-- **Portable ZIP** (recommended for developers/power users)
+- **ClipboardAggregatorSetup.msi** — recommended for most users
+- **setup.exe** — alternative installer
+- **ClipboardAggregator-v1.0.0.zip** — zip bundle containing both
 
 ---
 
 ## Quick Start
 
-1. Install or extract app.
-2. Launch `ClipboardAggregator.exe`.
+1. Download and run `ClipboardAggregatorSetup.msi`.
+2. The app starts automatically and appears in your system tray.
 3. Copy text as usual (`Ctrl + C`).
-4. Press `Ctrl + Shift + V` to paste all stored items.
+4. Press `Ctrl + Shift + V` to paste all stored items at once.
 
 ---
 
 ## Tray Menu
 
-Right-click tray icon to:
+Right-click the tray icon to:
 - Paste all now
 - Pause/Resume capture
 - Clear history
-- Enable/Disable auto-start
+- Enable/Disable auto-start with Windows
 - Exit
 
 ---
@@ -53,10 +55,10 @@ Right-click tray icon to:
 ## Privacy
 
 Clipboard Aggregator is designed to be **local-first**:
-- No telemetry by default
+- No telemetry
 - No network sync
 - No account required
-- Clipboard history is not uploaded
+- Clipboard history is never uploaded
 
 See [PRIVACY.md](PRIVACY.md) for full details.
 
@@ -71,22 +73,30 @@ If you discover a vulnerability, please follow [SECURITY.md](SECURITY.md).
 ## Troubleshooting
 
 ### App does not start on boot
-- Re-enable auto-start from tray menu.
-- If needed, reinstall using installer and enable startup option.
+- Re-enable auto-start from the tray menu.
+- If needed, reinstall using the installer and enable the startup option.
 
 ### Hotkey not working
-- Another app may already use `Ctrl + Shift + V`.
-- Close conflicting app or change hotkey in a future settings release.
+- Another app may already be using `Ctrl + Shift + V`.
+- Close the conflicting app or wait for a future settings release.
 
 ### Only first line pastes in some apps
-- Some target inputs are single-line only and ignore line breaks.
-- Use single-line join mode in future updates.
+- Some inputs are single-line only and ignore line breaks.
+- This will be addressed in a future update.
+
+---
+
+## Requirements
+
+- Windows 10 or later (x64)
+- No additional dependencies — everything is bundled in the installer
 
 ---
 
 ## Build (Developer)
 
-Visual Studio / MSVC:
+Visual Studio 2022/2026 with MSVC:
 
 ```bat
-cl /EHsc /W4 /DUNICODE /D_UNICODE clipboard_aggregator.cpp user32.lib shell32.lib advapi32.lib /link /SUBSYSTEM:WINDOWS
+cl /EHsc /W4 /DUNICODE /D_UNICODE ClipboardAggregator.cpp user32.lib shell32.lib advapi32.lib /link /SUBSYSTEM:WINDOWS
+```

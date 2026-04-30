@@ -12,7 +12,8 @@
 Please report vulnerabilities responsibly.
 
 ### Preferred method
-Open a **private security advisory** on GitHub (if enabled), or email the maintainer directly.
+Open a **private security advisory** on GitHub or open an issue at:  
+https://github.com/Mdfaijan2003/ClipboardAggregator/issues
 
 ### Please include
 - A clear description of the issue
@@ -21,20 +22,20 @@ Open a **private security advisory** on GitHub (if enabled), or email the mainta
 - Potential impact
 - Suggested fix (optional)
 
-### Response timeline (target)
+### Response timeline
 - Initial acknowledgment: within 72 hours
 - Triage/update: within 7 days
-- Fix release timeline: depends on severity
+- Fix release: depends on severity
 
 ## Scope
 
-In-scope examples:
+**In scope:**
 - Clipboard leakage beyond documented behavior
 - Privilege escalation
 - Unsafe startup behavior enabling abuse
-- Insecure update/distribution process
+- Insecure distribution process
 
-Out of scope:
+**Out of scope:**
 - Issues caused by local malware already controlling the machine
 - Unsupported legacy versions
 
