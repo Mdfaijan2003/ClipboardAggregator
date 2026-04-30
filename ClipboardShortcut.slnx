@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="../../../WindowsProject/ClipboardAggregatorSetup/ClipboardAggregatorSetup.vdproj" Type="Installer">
+    <Build Solution="Release|x64" />
+  </Project>
+  <Project Path="ClipboardShortcut/ClipboardShortcut.vcxproj" Id="bbac0bb0-47f1-4d9c-a3d7-d112c154aaf9" />
+</Solution>
